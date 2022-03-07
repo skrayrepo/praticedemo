@@ -1,5 +1,7 @@
 package pojo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Employee {
@@ -7,12 +9,32 @@ public class Employee {
     int salary;
     String empCode;
     String dateOfJoin;
+    Date dateofJoining;
+
+    public Date getDateofJoining() {
+        return dateofJoining;
+    }
+
+    public void setDateofJoining(Date dateofJoining) {
+        try {
+            this.dateofJoining = new SimpleDateFormat("dd/MM/yyyy").parse(this.dateOfJoin);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
     public Employee(String name, int salary, String empCode, String dateOfJoin) {
         this.name = name;
         this.salary = salary;
         this.empCode = empCode;
         this.dateOfJoin = dateOfJoin;
+    }
+
+    public Employee(String name, int salary, String empCode, Date dateOfJoin) {
+        this.name = name;
+        this.salary = salary;
+        this.empCode = empCode;
+        this.dateofJoining = dateOfJoin;
     }
 
     public String getName() {
@@ -53,7 +75,7 @@ public class Employee {
                 "name='" + name + '\'' +
                 ", salary=" + salary +
                 ", empCode='" + empCode + '\'' +
-                ", dateOfJoin=" + dateOfJoin +
+                ", dateofJoining=" + dateofJoining+
                 '}';
     }
 }
