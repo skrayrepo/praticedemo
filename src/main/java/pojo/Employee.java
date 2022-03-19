@@ -3,6 +3,7 @@ package pojo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class Employee {
     String name;
@@ -10,6 +11,7 @@ public class Employee {
     String empCode;
     String dateOfJoin;
     Date dateofJoining;
+    List<String> mobileNumber;
 
     public Date getDateofJoining() {
         return dateofJoining;
@@ -28,6 +30,20 @@ public class Employee {
         this.salary = salary;
         this.empCode = empCode;
         this.dateOfJoin = dateOfJoin;
+    }
+
+    public Employee(String name, int salary, List<String> mobileNumber) {
+        this.name = name;
+        this.salary = salary;
+        this.mobileNumber = mobileNumber;
+    }
+
+    public List<String> getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(List<String> mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 
     public Employee(String name, int salary, String empCode, Date dateOfJoin) {
