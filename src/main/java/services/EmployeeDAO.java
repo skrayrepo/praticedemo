@@ -6,6 +6,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EmployeeDAO {
@@ -23,5 +24,16 @@ public class EmployeeDAO {
         }
 
         return empList;
+    }
+
+    public List<Employee> getEmployeeDetails(){
+        List empList = new ArrayList<Employee>();
+            empList.add(new Employee("Santosh",5000, Arrays.asList("1111111111","2222222222")));
+            empList.add(new Employee("Mack",3000,Arrays.asList("444444444","5555555555")));
+            empList.add(new Employee("Jack",70000,Arrays.asList("6666666666","8888888888")));
+            empList.add(new Employee("Sangeeta",9000,Arrays.asList("777777777","999999999")));
+            empList.add(new Employee("Zammei",3000,Arrays.asList("1212121212","2323232323")));
+            empList.add(new Employee("AraVind",9000,Arrays.asList("5656565656","5657878788")));
+            return empList;
     }
 }
