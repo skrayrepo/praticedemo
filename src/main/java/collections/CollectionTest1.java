@@ -21,7 +21,17 @@ public class CollectionTest1 {
             System.out.println("Array=="+itlist.next());
         }
         //Arrays[] arrays = intArray.to
-        List<Integer> arrayList = new ArrayList<>();
+        Collection<String> co = new ArrayList<>();
+        co.add("zzzzz");
+        co.add("bbbb");
+        co.add("cccc");
+        Iterator itco = co.iterator();
+        while(itco.hasNext()){
+            String itco1= (String)itco.next();
+            System.out.println(itco1);
+        }
+        System.out.println("----------------------");
+        co.forEach(System.out::println);
 
 
     }

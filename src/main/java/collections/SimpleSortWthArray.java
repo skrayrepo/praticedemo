@@ -1,5 +1,5 @@
 package collections;
-
+//Get largest and smallest number from array
 public class SimpleSortWthArray {
     public static void main(String[] args){
         int[] intArray = {45,12,67,30,55,77,90,54};
