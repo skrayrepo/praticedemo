@@ -1,7 +1,7 @@
 package pojo;
 
 public class Student {
-    String name;
+    protected String name;
     int rollNo;
     String section;
 
