@@ -2,6 +2,7 @@ package oops.abstraction;
 
 public class Child extends Parents{
     //Parents obj = new Parents(); Abstract class never been instantiated
+    String name = "Santosh";
     public Child(){
         //super.getMessage();
     }
@@ -28,6 +29,10 @@ public class Child extends Parents{
 
     public void getHouseDetails(){
         System.out.println("Geeting Child house details");
+    }
+
+    public void getChildDetails(){
+        System.out.println("Child Details.....");
     }
 
 }

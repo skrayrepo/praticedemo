@@ -8,5 +8,7 @@ public class MainClass {
         obj.getMessage();
         Parents.getFamily();
         obj.getHouseDetails();
+        //obj.name = "Santosh"; can't access as object reference to Parents class
+        //obj.getChildDetails(); can't access as object reference to Parents class
     }
 }
