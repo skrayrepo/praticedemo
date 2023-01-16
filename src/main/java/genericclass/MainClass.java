@@ -18,6 +18,10 @@ public class MainClass {
         GenericInterface<Float> obj2 = new ImplimentaionClass<>(23.5f);
         System.out.println(obj2.getMessage());
 
+        GenericMethodClass obj3 = new GenericMethodClass();
+        obj3.getMessage(33);
+        obj3.getMessage("Santosh");
+
     }
 
 

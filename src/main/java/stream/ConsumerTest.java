@@ -18,7 +18,7 @@ public class ConsumerTest {
         conTest.accept(50);
 
         List<Integer> list = Arrays.asList(7,5,3,2,1,9);
-        list.stream().forEach((t) -> {                      //Foreach of stream takes Consumer interface as parameter
+        list.forEach((t) -> {                      //Foreach of stream takes Consumer interface as parameter
            t=t+1 ;
            System.out.println("Consumer value for labda is:" +t);
         });
