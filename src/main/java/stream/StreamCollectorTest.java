@@ -12,17 +12,28 @@ public class StreamCollectorTest {
     public static void  main(String[] args){
         EmployeeDAO dao = new EmployeeDAO();
         List<Employee> empList = dao.getEmployeeList();
-        empList= empList.stream().sorted(Comparator.comparing((e) -> e.getDateofJoining())).collect(Collectors.toList());
+        empList=
+                empList.stream()
+                        .sorted(Comparator.comparing((e) -> e.getDateofJoining()))
+                        .collect(Collectors.toList());
         empList.forEach(System.out::println);
         System.out.println("To collect result-------------------------------------------");
-        List<String> list = empList.stream().map(Employee::getName).collect(Collectors.toList());
+        List<String> list =
+                empList.stream()
+                        .map(Employee::getName)
+                        .collect(Collectors.toList());
         list.forEach(System.out::println);
         System.out.println("-------------------------------------------");
-        String joined = empList.stream().map(Object::toString).collect(Collectors.joining(", "));
+        String joined =
+                empList.stream()
+                        .map(Object::toString)
+                        .collect(Collectors.joining(", "));
         System.out.println(joined);
         System.out.println("-------------------------------------------");
         // Compute sum of salaries of employee
-        int totalSalary = empList.stream().collect(Collectors.summingInt(Employee::getSalary));
+        int totalSalary =
+                empList.stream()
+                        .collect(Collectors.summingInt(Employee::getSalary));
         System.out.println("Total salaries of employee="+totalSalary);
         // Group employees by department
     }

@@ -6,6 +6,7 @@ import services.StudentDAO;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ComparatorMainClass {
     public static void main(String[] args) {
@@ -25,10 +26,7 @@ public class ComparatorMainClass {
         list.forEach(System.out::println);
         System.out.println("");
         //Using Lamda expression
-        Collections.sort(list,(s1,s2)->{
-            return s1.getName().compareToIgnoreCase(s2.getName());
-        });
-
+        Collections.sort(list,(s1,s2)->s1.getName().compareToIgnoreCase(s2.getName()));
         list.forEach(System.out::println);
     }
 

@@ -12,18 +12,31 @@ public class StreamSortingTest {
     public static void main(String[] args){
         EmployeeDAO dao = new EmployeeDAO();
         List<Employee> empList = dao.getEmployeeList();
-        empList.stream().sorted(Comparator.comparing(e -> e.getName())).forEach(System.out::println);
+        empList.stream()
+                .sorted(Comparator.comparing(e -> e.getName()))
+                .forEach(System.out::println);
         System.out.println("-------------------------------------------");
-        empList.stream().sorted(Comparator.comparing(Employee::getName).reversed()).forEach(System.out::println);
+        empList.stream()
+                .sorted(Comparator.comparing(Employee::getName).reversed())
+                .forEach(System.out::println);
         System.out.println("-------------------------------------------");
-        empList.stream().sorted((e1,e2) -> e1.getSalary() - e2.getSalary()).forEach(System.out::println);
+        empList.stream()
+                .sorted((e1,e2) -> e1.getSalary() - e2.getSalary())
+                .forEach(System.out::println);
         System.out.println("-------------------------------------------");
-        empList.stream().sorted(Comparator.comparing((e) -> e.getDateofJoining())).forEach(System.out::println);
+        empList.stream()
+                .sorted(Comparator.comparing((e) -> e.getDateofJoining()))
+                .forEach(System.out::println);
         System.out.println("To collect result-------------------------------------------");
-        empList= empList.stream().sorted(Comparator.comparing((e) -> e.getDateofJoining())).collect(Collectors.toList());
+        empList= empList.stream()
+                .sorted(Comparator.comparing((e) -> e.getDateofJoining()))
+                .collect(Collectors.toList());
         empList.forEach(System.out::println);
         System.out.println("To collect result-------------------------------------------");
-        List<String> list = empList.stream().map(Employee::getName).collect(Collectors.toList());
+        List<String> list =
+                empList.stream()
+                        .map(Employee::getName)
+                        .collect(Collectors.toList());
         list.forEach(System.out::println);
     }
 }
