@@ -11,7 +11,15 @@ public class MainClass {
         EmployeeDAO dao = new EmployeeDAO();
         List<Employee> empList = dao.getEmployeeList();
         HelperClass emp = new HelperClass();
-        Collections.sort(empList,emp::sortByName);
+        Collections.sort(empList,emp::sortByName);//Method object reference
+        empList.forEach(System.out::println);
+        System.out.println("");
+
+        Collections.sort(empList,emp::sortBySalary);
+        empList.forEach(System.out::println);
+        System.out.println("");
+
+        Collections.sort(empList,HelperStaticClass::sortByName); //Static method reference
         empList.forEach(System.out::println);
     }
 }

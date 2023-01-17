@@ -44,12 +44,13 @@ public class Employee implements Comparable<Employee>{
         this.empCode = empCode;
     }
 //overide this when we want to sort integers
-    /*@Override
+   /* @Override
     public int compareTo(Employee o) {
-        return o.getSalary() - this.salary;
+        return this.salary - o.getSalary();
     }*/
-    @Override
+   @Override
     public int compareTo(Employee o) {
+
         return this.name.compareToIgnoreCase(o.getName());
     }
 }
