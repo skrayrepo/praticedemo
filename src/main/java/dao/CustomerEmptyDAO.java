@@ -4,9 +4,7 @@ import pojo.Address;
 import pojo.Card;
 import pojo.Customer;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class CustomerEmptyDAO {
     public static List<Customer> getCustomerList(){
@@ -27,5 +25,19 @@ public class CustomerEmptyDAO {
                 Arrays.asList(new Card(5664434555l,"Rinku Pattnaik")),
                 new Address("5332","PLRD","Bangalore","Karnataka",560061,null)));
         return customerList;
+    }
+
+    public static Map<Integer,Customer> getCustomerInfo(){
+        Map<Integer,Customer> customerMap = new HashMap<>();
+        customerMap.put(1,new Customer("Santosh",100,
+                new Address("6144","PLRD","Bangalore","Karnataka",560061,9886400397l)));
+        customerMap.put(5,new Customer("Tapaswini",103,
+                new Address("5122","CM","Bangalore","Karnataka",560061,98864003990l)));
+        customerMap.put(3,new Customer("Sragvi",101,
+                new Address("B103","CM","Bangalore","Karnataka",560061,98864003850l)));
+        customerMap.put(2,new Customer("Ashok",102,new Address("3442","SNN","Bangalore","Karnataka",560061,9886400321l)));
+        customerMap.put(4,new Customer("Rinku",104,
+                new Address("5332","PLRD","Bangalore","Karnataka",560061,null)));
+        return customerMap;
     }
 }

@@ -12,6 +12,23 @@ public class Employee {
     String dateOfJoin;
     Date dateofJoining;
     List<String> mobileNumber;
+    String department;
+
+    public Employee(String name, int salary, String code, Date date, String dept) {
+        this.name = name;
+        this.salary = salary;
+        this.empCode = code;
+        this.dateofJoining =date;
+        this.department = dept;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
 
     public Date getDateofJoining() {
         return dateofJoining;
@@ -32,6 +49,7 @@ public class Employee {
         this.dateOfJoin = dateOfJoin;
     }
 
+
     public Employee(String name, int salary, List<String> mobileNumber) {
         this.name = name;
         this.salary = salary;
@@ -46,11 +64,20 @@ public class Employee {
         this.mobileNumber = mobileNumber;
     }
 
-    public Employee(String name, int salary, String empCode, Date dateOfJoin) {
+    public Employee(String name, int salary,  String dept) {
+        this.name = name;
+        this.salary = salary;
+        //this.empCode = empCode;
+        //this.dateOfJoin = dateOfJoin;
+        this.department = dept;
+    }
+
+    public Employee(String name, int salary, String empCode,  Date dateofJoining) {
         this.name = name;
         this.salary = salary;
         this.empCode = empCode;
-        this.dateofJoining = dateOfJoin;
+        //this.dateOfJoin = dateOfJoin;
+        this.dateofJoining = dateofJoining;
     }
 
     public String getName() {

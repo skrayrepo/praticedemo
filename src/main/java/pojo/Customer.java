@@ -26,6 +26,14 @@ public class Customer {
         this.address =address;
     }
 
+    public Customer(String customerName, Integer customerCode,Address address) {
+        this.customerName = customerName;
+        this.customerCode = customerCode;
+        //this.creditPoints = creditPoints;
+        //this.card = card;
+        this.address =address;
+    }
+
     public Address getAddress() {
         return address;
     }

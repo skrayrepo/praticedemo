@@ -8,10 +8,8 @@ interface LambdaParameterInt{
 }
 public class LamdaParameterTest {
     public static void main(String [] args){
-        LambdaParameterInt exp = (a,b) -> {
-            int sum = a+b;
-            return sum;
-        };
+        LambdaParameterInt exp = (a,b) -> a+b;
+
         exp.show(exp.getSumResult(3,4));
     }
 }

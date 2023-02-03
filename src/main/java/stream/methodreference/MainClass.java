@@ -22,13 +22,8 @@ public class MainClass {
         boolean result1 =check.apply(4,9);
         System.out.println(result1);
 
-        BiFunction<Integer,Integer,Boolean> check1 =(a,b) ->{
-            if(a>b){
-                return true;
-            }else{
-                return false;
-            }
-        };
+        BiFunction<Integer,Integer,Boolean> check1 =(a,b) ->a > b;
+
         check1.apply(3,4);
 
     }
