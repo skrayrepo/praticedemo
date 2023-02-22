@@ -8,6 +8,7 @@ import services.EmployeeDAO;
 import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.reducing;
 
@@ -115,6 +116,25 @@ public class TestCollectMethod {
         Map<String,Date> mapList = empDeptList.stream()
                 .collect(Collectors.toMap(Employee::getName,Employee::getDateofJoining));
         mapList.entrySet().forEach(System.out::println);
+
+        System.out.println("******Loop Fusion and Short-circuiting, for these streams are faster then external loop");
+        empDeptList.stream()
+                .filter(e->{
+                    if(e.getSalary() > 3000) {
+                        System.out.println("filter");
+                    }
+                    return true;
+                })
+                .map(e-> {
+                    System.out.println("map");
+                    return e.getName();
+                })
+                .limit(3)
+                .collect(Collectors.toList());
+
+        String[] strArr = {"santosh","Tapaswini","Saurvi","Sree"};
+        List<Integer> length = Stream.of(strArr).map(String::length).collect(Collectors.toList());
+        length.stream().forEach(System.out::print);
 
     }
 }

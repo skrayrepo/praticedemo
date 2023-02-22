@@ -5,8 +5,10 @@ import dao.CustomerEmptyDAO;
 import pojo.Card;
 import pojo.Customer;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TestMapAndFlatMapMethod {
     public static void main(String[] args) {
@@ -70,6 +72,22 @@ public class TestMapAndFlatMapMethod {
                         //.map(customer->customer.getCard())
                         .collect(Collectors.toList());
         cardFilterList.forEach(System.out::println);
+
+        System.out.println("********** Remove duplicate charecters from each strings");
+        String[] uniqueArray = {"hello","sallow"};
+        List<String> result = Stream.of(uniqueArray).map(s->s.split(""))
+                .flatMap(Arrays::stream)
+                .distinct()
+                .collect(Collectors.toList());
+        result.stream().forEach(System.out::print);
+        System.out.println("");
+        System.out.println("*******Handing two separate list using flatMap*************");
+        List<Integer> intArr1 = Arrays.asList(1,2,3);
+        List<Integer> intArr2 = Arrays.asList(4,5);
+        List<List<Integer>> list322 = intArr1.stream()
+                .flatMap(i->intArr2.stream().map(j->Arrays.asList(i,j)))
+                .collect(Collectors.toList());
+        list322.stream().forEach(System.out::println);
 
     }
 }
