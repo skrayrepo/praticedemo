@@ -1,4 +1,4 @@
-package designpattern.clonable.singleton;
+package designpattern.singleton;
 
 public enum Singleton {
     INSTANCE;

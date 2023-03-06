@@ -135,6 +135,14 @@ public class TestCollectMethod {
         String[] strArr = {"santosh","Tapaswini","Saurvi","Sree"};
         List<Integer> length = Stream.of(strArr).map(String::length).collect(Collectors.toList());
         length.stream().forEach(System.out::print);
-
+        Map<String,Integer> map1 = new HashMap<>();
+        map1.put("san",1);
+        map1.put("dav",4);
+        map1.put("zap,",2);
+        map1.entrySet().stream().sorted(Comparator.comparing(String::valueOf)).forEach(System.out::println);
+        Set<Map.Entry<String, Integer>> mapset = map1.entrySet();
+        for(Map.Entry maps:mapset){
+            maps.getValue();
+        }
     }
 }

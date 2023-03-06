@@ -5,6 +5,8 @@ import services.EmployeeDAO;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class MainClass {
     public static void main(String[] args) {
@@ -21,5 +23,14 @@ public class MainClass {
 
         Collections.sort(empList,HelperStaticClass::sortByName); //Static method reference
         empList.forEach(System.out::println);
+
+        Queue<String> queue = new PriorityQueue<>();
+        queue.add("Sant");
+        queue.add("Cat");
+        queue.add("Tap");
+        queue.add("Arav");
+        System.out.println(queue);
+        System.out.println(queue.poll());
+        System.out.println(queue);
     }
 }

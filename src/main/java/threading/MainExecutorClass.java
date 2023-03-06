@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class MainExecutorClass {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
+        ExecutorTest executorTest = new ExecutorTest();
         for (int i = 0; i < 10; i++) {
             //Thread.sleep(2000);
             executorService.execute(new ExecutorTest());
